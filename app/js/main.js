@@ -1,1 +1,9 @@
-console.log('Angular Rocks', angular);
+;(function () {
+
+  'use strict';
+
+  angular.module('Vehicles', []);
+
+
+
+}());

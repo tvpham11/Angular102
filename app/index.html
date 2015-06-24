@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Name</title>
+  <title>Vehicle Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/vendor/normalize.css">
+  <link rel="stylesheet" href="css/vendor/foundation.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body ng-app="Vehicles">
 
-  <div class="container">
-
+  <div class="container" ng-controller="Vehicle">
+    <h3>Add a vehicle</h3>
+    <form ng-submit="addVehicle(car)">
+      <input type="text" ng-model="car.make" placeholder="Make">
+      <input type="text" ng-model="car.model" placeholder="Model">
+      <input type="text" ng-model="car.year" placeholder="Year">
+      <button>Add</button>
+    </form>
   </div>
 
   <!-- VENDOR -->
@@ -20,6 +27,8 @@
 
   <!-- MAIN -->
   <script src="js/main.js"></script>
+
+  <script src="js/vehicle/vehicle.controller.js"></script>
 
 </body>
 </html>
