@@ -1,3 +1,12 @@
 .container {
   width: 600px;
   margin: 25px auto; }
+
+ul li span {
+  color: white;
+  background-color: red;
+  margin-left: 25px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.4em;
+  cursor: pointer; }

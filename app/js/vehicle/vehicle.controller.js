@@ -4,25 +4,20 @@
 
   angular.module('Vehicles')
 
-  .controller('Vehicle', ['$scope', function($scope) {
+  .controller('Vehicle', ['$scope', '$location', 'VehicleService',
 
-    // List of vehicles
-    $scope.vehicleList = [];
+    function($scope, $location, VehicleService) {
+      // Add vehicle method
+      $scope.addVehicle = function(x) {
+        VehicleService.addCar(x).success(function() {
+          // Re-route to home upon submission
+          $location.path('/');
+          // Clear form
+          $scope.car = {};
+        });
+      };
+    }
 
-    // Vehicle constructor
-    var Vehicle = function(options) {
-      this.make = options.make;
-      this.model = options.model;
-      this.year = options.year;
-    };
-
-    // Add vehicle method
-    $scope.addVehicle = function(x) {
-      var car = new Vehicle(x);
-      $scope.vehicleList.push(car);
-      $scope.car = {};
-    };
-
-  }]);
+  ]);
 
 }());

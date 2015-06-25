@@ -9,15 +9,13 @@
 </head>
 <body ng-app="Vehicles">
 
-  <div class="container" ng-controller="Vehicle">
-    <h3>Add a vehicle</h3>
-    <form ng-submit="addVehicle(car)">
-      <input type="text" ng-model="car.make" placeholder="Make">
-      <input type="text" ng-model="car.model" placeholder="Model">
-      <input type="text" ng-model="car.year" placeholder="Year">
-      <button>Add</button>
-    </form>
-  </div>
+  <nav>
+    <a href="#/">Home</a>
+    <a href="#/add">Add</a>
+    <a href="#/about">About</a>
+  </nav>
+
+  <div class="container" ng-view></div>
 
   <!-- VENDOR -->
   <script src="js/vendor/jquery.js"></script>
@@ -29,6 +27,11 @@
   <script src="js/main.js"></script>
 
   <script src="js/vehicle/vehicle.controller.js"></script>
+  <script src="js/vehicle/vehiclelist.controller.js"></script>
+<!--  <script src="js/vehicle/vehicle.factory.js"></script> -->
+  <script src="js/vehicle/vehicle.service.js"></script>
+
+
 
 </body>
 </html>

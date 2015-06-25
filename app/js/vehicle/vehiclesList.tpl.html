@@ -1,0 +1,8 @@
+<h2>My Cars</h2>
+
+<ul>
+  <li ng-repeat="v in vehicleList" data-id="{{ v.objectId }}">
+    {{ v.year }} {{ v.make }} {{ v.model }}
+    <span ng-click="deleteMe(v)">x</span>
+  </li>
+</ul>
