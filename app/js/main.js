@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('Vehicles', ['ngRoute'])
+  angular.module('Vehicles', ['ngRoute', 'ngCookies'])
 
   .constant('PARSE', {
 
@@ -44,6 +44,13 @@
 
         controller: 'VehicleSingle',
         templateUrl: 'js/vehicle/carinfo.tpl.html'
+
+      })
+
+      .when('/register', {
+
+        controller: 'UserController',
+        templateUrl: 'js/user/register.tpl.html'
 
       })
 

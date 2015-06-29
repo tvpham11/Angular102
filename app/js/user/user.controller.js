@@ -3,9 +3,13 @@
   'use strict';
   angular.module('Vehicles')
 
-  .controlleR('UserController', [
+  .controller('UserController', ['$scope', 'UserService',
 
-    function() {
+    function($scope, UserService) {
+
+      $scope.registerUser = function(user) {
+        UserService.register(user);
+      }
 
     }
 

@@ -4,9 +4,9 @@
 
   angular.module('Vehicles')
 
-  .service('UserService', [
+  .service('UserService', ['PARSE', '$http', '$cookies',
 
-    function() {
+    function(PARSE, $http, $cookies) {
 
       this.checkUser = function() {
         // body...
@@ -20,8 +20,12 @@
 
       };
 
-      this.register = function() {
-
+      this.register = function(user) {
+        $http.post(PARSE.URL + 'users', user, PARSE.CONFIG)
+          .success(function(data) {
+            $cookies.put('sessionToken', data.sessionToken);
+          }
+        );
       };
 
     }
