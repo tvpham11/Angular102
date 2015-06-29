@@ -38,6 +38,20 @@
         controller: 'Vehicle',
         templateUrl: 'js/vehicle/about.tpl.html'
 
+      })
+
+      .when('/car/:id', {
+
+        controller: 'VehicleSingle',
+        templateUrl: 'js/vehicle/carinfo.tpl.html'
+
+      })
+
+      .when('/login', {
+
+        controller: 'UserController',
+        templateUrl: 'js/user/login.tpl.html'
+
       });
     }
 

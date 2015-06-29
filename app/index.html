@@ -9,10 +9,12 @@
 </head>
 <body ng-app="Vehicles">
 
-  <nav>
+  <nav ng-controller="NavCtrl">
     <a href="#/">Home</a>
     <a href="#/add">Add</a>
     <a href="#/about">About</a>
+    <a href="#/login">Login</a>
+
   </nav>
 
   <div class="container" ng-view></div>
@@ -28,9 +30,12 @@
 
   <script src="js/vehicle/vehicle.controller.js"></script>
   <script src="js/vehicle/vehiclelist.controller.js"></script>
+  <script src="js/vehicle/vehicleSingle.controller.js"></script>
+  <script src="js/vehicle/nav.controller.js"></script>
 <!--  <script src="js/vehicle/vehicle.factory.js"></script> -->
   <script src="js/vehicle/vehicle.service.js"></script>
-
+  <script src="js/user/user.controller.js"></script>
+  <script src="js/user/user.service.js"></script>
 
 
 </body>

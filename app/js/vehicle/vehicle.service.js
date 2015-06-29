@@ -7,7 +7,7 @@
 
     function ($http, PARSE, $rootScope) {
 
-      var endpoint = PARSE.URL + 'classes/Vehicle';
+      var endpoint = PARSE.URL + 'classes/Vehicle/';
 
       // Vehicle constructor
       var Vehicle = function(options) {
@@ -15,6 +15,11 @@
         this.model = options.model;
         this.year = options.year;
         this.condition = 'New';
+      };
+
+      // Get a single vehicle
+      this.getCar = function(id) {
+        return $http.get(endpoint + id, PARSE.CONFIG);
       };
 
       // Get an array of all vehicles
@@ -26,7 +31,7 @@
 
       // Delete a single vehicle
       this.deleteCar = function(whichOne) {
-        var deleteURL = PARSE.URL + 'classes/Vehicle/' + whichOne.objectId;
+        var deleteURL = endpoint + whichOne.objectId;
         // console.log(deleteURL);
         return $http.delete(deleteURL, PARSE.CONFIG);
       };

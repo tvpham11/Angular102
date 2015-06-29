@@ -7,6 +7,8 @@
   .controller('VehicleList', ['$scope', 'VehicleService', '$rootScope',
     function($scope, VehicleService, $rootScope) {
 
+      $rootScope.$broadcast('PageChange', 'Home Page');
+
       // Call method to retrieve all vehicles
       VehicleService.getCars();
 

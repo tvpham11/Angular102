@@ -7,7 +7,7 @@
 
     function ($http, PARSE) {
 
-      var endpoint = PARSE.URL + 'classes/Vehicle';
+      var endpoint = PARSE.URL + 'classes/Vehicle/';
 
       // Vehicle constructor
       var Vehicle = function(options) {
