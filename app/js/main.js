@@ -7,6 +7,7 @@
   .constant('PARSE', {
 
     URL: 'https://api.parse.com/1/',
+
     CONFIG: {
       headers: {
         'X-Parse-Application-Id': 'CWZZlYbxqfYRs0iYORRt4UvaEx5tmFcVusdUxrtW',
@@ -16,7 +17,7 @@
 
   })
 
-  .config( [ '$routeProvider',
+  .config([ '$routeProvider',
     function($routeProvider) {
 
       $routeProvider.when('/', {
@@ -52,13 +53,15 @@
         controller: 'UserController',
         templateUrl: 'js/user/register.tpl.html'
 
-      })
+      });
+    }
 
-      .when('/login', {
+  ])
 
-        controller: 'UserController',
-        templateUrl: 'js/user/login.tpl.html'
-
+  .run(['UserService', '$rootScope',
+    function(UserService, $rootScope) {
+      $rootScope.$on('$routeChangeStart', function() {
+        UserService.checkUser();
       });
     }
 

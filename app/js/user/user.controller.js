@@ -9,6 +9,10 @@
 
       $scope.registerUser = function(user) {
         UserService.register(user);
+      };
+
+      $scope.loginUser = function(user) {
+        UserService.logIn(user);
       }
 
     }
